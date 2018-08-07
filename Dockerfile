@@ -68,7 +68,9 @@ RUN set -x && \
     touch /var/log/msmtp.log && \
     chown www-data:www-data /var/log/msmtp.log && \
     # File upload permissions
-    chown nginx:www-data /var/tmp/nginx && chmod g+rx /var/tmp/nginx
+    chown nginx:www-data /var/tmp/nginx && chmod g+rx /var/tmp/nginx && \
+    # fix for GNU charset conversion library => https://github.com/CampbellSoftwareSolutions/docker-osticket/issues/28
+    apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing gnu-libiconv
 COPY files/ /
 VOLUME ["/data/upload/include/plugins","/data/upload/include/i18n","/var/log/nginx"]
 EXPOSE 80
