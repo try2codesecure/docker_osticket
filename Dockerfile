@@ -70,7 +70,7 @@ RUN set -x && \
     # File upload permissions
     chown nginx:www-data /var/tmp/nginx && chmod g+rx /var/tmp/nginx && \
     # fix for GNU charset conversion library => https://github.com/CampbellSoftwareSolutions/docker-osticket/issues/28
-    apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing gnu-libiconv
+    apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing gnu-libiconv && \
     # http://www.osticket.com/forum/discussion/1260/problems-using-utf-8-caracters
     sed -i 's/ISO-8859-1/UTF-8/g' /data/upload/include/pear/Mail/mime.php
 COPY files/ /
