@@ -69,6 +69,6 @@ RUN set -x && \
     # http://www.osticket.com/forum/discussion/1260/problems-using-utf-8-caracters
     sed -i 's/ISO-8859-1/UTF-8/g' /data/upload/include/pear/Mail/mime.php
 COPY files/ /
-VOLUME ["/data/upload/include/plugins","/data/upload/include/i18n","/var/log/nginx"]
+VOLUME ["/data/upload/include/plugins","/data/upload/include/i18n"]
 EXPOSE 80
 CMD ["/data/bin/start.sh"]
