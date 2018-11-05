@@ -15,7 +15,7 @@ RUN set -x \
     && chmod -R go= /data/upload/setup_hidden
 
 FROM php:7.0-fpm-alpine
-MAINTAINER Martin Campbell <martin@campbellsoftware.co.uk>
+MAINTAINER try2codesecure
 # environment for osticket
 ENV HOME=/data
 # setup workdir
